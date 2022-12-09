@@ -1,5 +1,5 @@
 import React from "react"
-import './FinalContent.css';
+import style from './FinalContent.module.css';
 import EnglishLevel from '../EnglishLevel/EnglishLevel';
 
 const FinalContent = (props) => {
@@ -11,22 +11,22 @@ const FinalContent = (props) => {
     if(props.succesfulAnswer > 5){
         textOfLevel = (
           <>
-          <EnglishLevel level = "A2"/>
+          <EnglishLevel level = {props.levelEnglish[1]}/>
           </>
         );
       }else{
         textOfLevel = (
           <>
-          <EnglishLevel level = "A1"/>
+          <EnglishLevel level = {props.levelEnglish[0]}/>
           </>
         );
       }
     
     return (
-        <div className='final-content'>
+        <div className={style.finalContent}>
             <p>We have succesful answer: {props.succesfulAnswer}</p>
             {textOfLevel}
-        <button onClick={props.handlerClickTwo }>Розпочати знову</button>
+        <button onClick={props.handlerClick }>Розпочати знову</button>
       </div>
     )
 }

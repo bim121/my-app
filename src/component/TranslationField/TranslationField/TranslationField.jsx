@@ -1,12 +1,12 @@
 import React from "react"
-import './TranslationField.css';
+import style from './TranslationField.module.css';
 import Card from "../Card/Card";
 import TranslationFieldCount from "../TranslationFieldCount/TranslationFieldCount";
 import TranslationFieldEnter from "../TranslationFieldEnter/TranslationFieldEnter";
 
 const TranslationField = (props) => {
     return (
-        <div className='translation-field'>
+        <div className={style.translationfield}>
             <Card word = {props.word}/>
             <TranslationFieldEnter inputTwo={props.inputTwo} setInputTwo={props.setInputTwo}/>
             <TranslationFieldCount succesfulAnswer={props.succesfulAnswer} wrongAnswer={props.wrongAnswer}/>

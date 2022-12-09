@@ -1,5 +1,5 @@
 import React from "react"
-import './EnglishLevel.css';
+import './EnglishLevel.module.css';
 const EnglishLevel = (props) => {
     return (
         <p>Your level is <span>{props.level}</span></p>

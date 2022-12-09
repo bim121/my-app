@@ -1,8 +1,9 @@
 import React from "react"
-import './Card.css';
+import style from './Card.module.css';
+
 const Card = (props) => {
     return (
-        <div className='card'>
+        <div className={style.card}>
             <p>
                 {props.word}
             </p>

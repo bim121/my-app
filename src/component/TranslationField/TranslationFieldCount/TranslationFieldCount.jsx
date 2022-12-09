@@ -1,10 +1,10 @@
 import React from "react"
-import './TranslationFieldCount.css';
+import style from './TranslationFieldCount.module.css';
 const TranslationFieldCount = (props) => {
     return (
-        <div className='translation-field-count'>
-            <p className='succesfull-answer'>succesful answer: {props.succesfulAnswer}</p>
-            <p className='wrong-answer'>wrong answer: {props.wrongAnswer}</p>
+        <div className={style.translationFieldCount}>
+            <p className={style.succesfullAnswer}>succesful answer: {props.succesfulAnswer}</p>
+            <p className={style.wrongAnswer}>wrong answer: {props.wrongAnswer}</p>
         </div>
     )
 }

@@ -2,7 +2,7 @@ import './App.css';
 import {useState} from "react";
 import {useReducer} from "react";
 import Header from './component/Header/Header';
-import UserEnter from './component/UserEnter/UserEnter';
+import UserEnter from './component/UserEnter/UserEnter/UserEnter';
 import TranslationField from './component/TranslationField/TranslationField/TranslationField';
 import FinalContent from './component/FinalContent/FinalContent/FinalContent';
 
@@ -10,7 +10,14 @@ var index = 0;
 var succesfulAnswer = 0;
 var wrongAnswer = 0;
 
-var listOfWord = [
+var listOfWord = [];
+
+var easylevelEnglish = ["A1", "A2"];
+var mediumlevelEnglish = ["A2", "B1"];
+var hardlevelEnglish = ["B1", "B2"];
+var levelEnglish = [];
+
+var easy = [
   { word: 'banan', translation: 'банан'},
   { word: 'carrot', translation: 'морковка'},
   { word: 'love', translation: 'любов' },
@@ -23,6 +30,32 @@ var listOfWord = [
   { word: 'telephone', translation: 'телефон'},
 ];
 
+var medium = [
+  { word: 'to disturb', translation: 'турбувати'},
+  { word: 'to generate', translation: 'генерувати'},
+  { word: 'to embed', translation: 'вбудувати' },
+  { word: 'to exchange', translation: 'для обміну' },
+  { word: 'to correct', translation: 'для виправлення' },
+  { word: 'to surrender', translation: 'здаватися' },
+  { word: 'to overwhelm', translation: 'щоб перевантажити' },
+  { word: 'to absorb', translation: 'поглинати' },
+  { word: 'to align', translation: 'вирівняти'},
+  { word: 'to withadraw', translation: 'щоб звідвести'},
+];
+
+var hard = [
+  { word: 'To abhor', translation: 'До огиди'},
+  { word: 'To foreshadow', translation: 'Віщувати'},
+  { word: 'To yield', translation: 'Щоб поступитися' },
+  { word: 'To sustain', translation: 'Підтримувати' },
+  { word: 'To nourish', translation: 'Живити' },
+  { word: 'To beget', translation: 'Щоб отримати' },
+  { word: 'To flourish', translation: 'Щоб процвітати' },
+  { word: 'To desist', translation: 'Відмовитися від відповідальності' },
+  { word: 'To contemplate', translation: 'Споглядати'},
+  { word: 'To foretell', translation: 'Щоб передвіщати'},
+];
+
 function App() { 
   const [showMode, setShowMode] = useState(true);
   const [showModeFinal, setShowModeFinal] = useState(true);
@@ -30,11 +63,22 @@ function App() {
   const [inputTwo, setInputTwo] = useState("");
   const [state, dispatch] = useReducer(reducer, { index, succesfulAnswer, wrongAnswer})
   
-  const handlerClick = () => {
+  const easyLevel = () => {
     setShowMode(!showMode);
+    listOfWord = easy;
+    levelEnglish = easylevelEnglish;
   }
-
-  const handlerClickTwo = () => {
+  const mediumLevel = () => {
+    setShowMode(!showMode);
+    listOfWord = medium;
+    levelEnglish = mediumlevelEnglish;
+  }
+  const hardLevel = () => {
+    setShowMode(!showMode);
+    listOfWord = hard;
+    levelEnglish = hardlevelEnglish;
+  }
+  const handlerClick = () => {
     setShowMode(!showMode);
     setShowModeFinal(!showModeFinal);
     state.succesfulAnswer = 0;
@@ -43,7 +87,7 @@ function App() {
 
   var content = (
     <>
-      <UserEnter inputOne={inputOne} setInputOne={setInputOne} handlerClick={handlerClick}/>
+      <UserEnter inputOne={inputOne} setInputOne={setInputOne} easyLevel={easyLevel} mediumLevel = {mediumLevel} hardLevel = {hardLevel}/>
     </>
   );
   
@@ -102,7 +146,7 @@ function App() {
     );
     content = (
       <>
-      <FinalContent succesfulAnswer={state.succesfulAnswer} handlerClickTwo ={handlerClickTwo}/>
+      <FinalContent succesfulAnswer={state.succesfulAnswer} handlerClick ={handlerClick} levelEnglish ={levelEnglish}/>
       </>
     );
   }
