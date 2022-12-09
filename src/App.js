@@ -11,7 +11,7 @@ var succesfulAnswer = 0;
 var wrongAnswer = 0;
 
 var listOfWord = [
-  { word: 'balls', translation: 'банан'},
+  { word: 'banan', translation: 'банан'},
   { word: 'carrot', translation: 'морковка'},
   { word: 'love', translation: 'любов' },
   { word: 'low', translation: 'низько' },
