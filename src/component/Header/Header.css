@@ -1,0 +1,12 @@
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: h;
+    background: linear-gradient(to right, #f6f1d3, #648880, #293f50);
+    height: 100px;
+  }
+  
+  header.h1{
+    text-align: center;
+  }

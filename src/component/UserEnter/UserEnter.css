@@ -1,0 +1,10 @@
+label{
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 2rem;
+  }
+  
+  .userEnter{
+    display: flex;
+    flex-direction: column;
+  }

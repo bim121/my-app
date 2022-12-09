@@ -1,0 +1,5 @@
+.translation-field-enter{
+    display: flex;
+    flex-direction: column;
+    width:30%;
+  }

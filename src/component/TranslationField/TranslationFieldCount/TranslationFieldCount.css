@@ -1,0 +1,14 @@
+.translation-field-count{
+    display: flex;
+    justify-content: space-between;
+    font-size: 32px;
+    width:80%;
+}
+
+.succesfull-answer{
+    color: green;
+}
+  
+.wrong-answer{
+    color: red;
+}
